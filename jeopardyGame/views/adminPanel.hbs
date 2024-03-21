@@ -8,14 +8,8 @@
         <li id="anAdmin">
           <!-- Display admin username -->
           <h2>{{this.username}}</h2>
-          <!-- Check if user is an admin -->
-          {{#if adminsList.Admin}}
-            <!-- If user is admin, provide link to game data -->
-            <li><a href="/gameOverview">Game Data</a></li>
-          {{else}}
             <!-- If user is not admin, provide login link -->
-            <li><a href="/adminLogin?userId={{this._id}}">Login</a></li>
-          {{/if}}
+            <a href="/adminLogin?userId={{this._id}}">Login</a>
         </li>
       {{/each}}
     </ul>

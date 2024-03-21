@@ -4,6 +4,8 @@ const Admin = require("../models/Admin");
 const GameModel = require("../models/Game");
 const passport = require("passport");
 const adminCheck = require("../adminCheck");
+const googlepassport = require('../passport');
+
 
 // GET home page
 router.get("/", (req, res) => {
@@ -14,6 +16,18 @@ router.get("/", (req, res) => {
     showFooter: false,
   });
 });
+
+// Add Google OAuth route
+router.get('/auth/google',
+  googlepassport.authenticate('google', { scope: ['email', 'profile'] }));
+
+router.get('/auth/google/callback',
+  googlepassport.authenticate('google', { failureRedirect: '/adminLogin' }),
+  function(req, res) {
+    // Successful authentication, redirect to admin panel or other page
+    res.redirect('/adminPanel');
+  });
+
 
 // GET page for user registration
 router.get("/playerInfoForm", (req, res) => {

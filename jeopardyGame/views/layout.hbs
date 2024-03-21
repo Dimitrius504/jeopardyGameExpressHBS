@@ -1,96 +1,112 @@
-<!DOCTYPE html>
 <html>
 
-<head>
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-  <link rel="stylesheet" href="/fonts/gyparody hv.ttf" />
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-  <script src="/jeopardyGame/public/javascripts/bootstrap.min.js"></script>
-  <source src="/jeopardyGame/public/audio/myinstants.mp3" type="audio/mpeg">
-  <script src="/javascripts/script.js"></script>
-</head>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/fonts/gyparody hv.ttf" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/jeopardyGame/public/javascripts/bootstrap.min.js"></script>
+    <source src="/jeopardyGame/public/audio/myinstants.mp3" type="audio/mpeg" />
+    <script src="/javascripts/script.js"></script>
+  </head>
 
-<body>
-  <div id="page-container">
-  <!-- Header section -->
-  {{#if showHeader}}
-  <header class="header" id="header">
-    <ul>
-      <li>
-        <!-- User 1 or navigation links -->
-        {{#if user1}}
-        <h2 id="user1">{{user1}}</h2>
-        {{else}}
-        <nav class="shared-nav">
-          <ul class="nav justify-content-end">
-            <li class="nav-item" id="navItem">
-              <button>
-                <a class="nav-link d-flex align-items-center" href="/adminPanel">Admins</a>
+  <body>
+    <div id="page-container">
+      <div class="wrapper">
+        <!-- Header section -->
+        {{#if showHeader}}
+          <header class="header" id="header">
+            <ul>
+              <li>
+                <!-- User 1 or navigation links -->
+                {{#if user1}}
+                  <h2 id="user1">{{user1}}</h2>
+                {{else}}
+                  <nav class="shared-nav">
+                    <ul class="nav justify-content-end">
+                      <li class="nav-item" id="navItem">
+                        <button>
+                          <a
+                            class="nav-link d-flex align-items-center"
+                            href="/adminPanel"
+                          >Admins</a>
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button>
+                          <a
+                            class="nav-link d-flex align-items-center"
+                            href="/gameInfo"
+                          >Add Game Data</a>
+                        </button>
+                      </li>
+                    </ul>
+                  </nav>
+                {{/if}}
+              </li>
+              <li>
+                <h1>{{title}}</h1>
+              </li>
+              <li>
+                <!-- User 2 or navigation links -->
+                {{#if user2}}
+                  <h2 id="user2">{{user2}}</h2>
+                {{else}}
+                  <nav class="shared-nav">
+                    <ul class="nav justify-content-end">
+                      <li class="nav-item">
+                        <button>
+                          <a
+                            class="nav-link d-flex align-items-center"
+                            href="/gameOverview"
+                          >Game Data</a>
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button>
+                          <a
+                            class="nav-link d-flex align-items-center"
+                            href="/game"
+                          >Live Game</a>
+                        </button>
+                      </li>
+                    </ul>
+                  </nav>
+                {{/if}}
+              </li>
+            </ul>
+          </header>
+        {{/if}}
+        <!-- Main content -->
+        <main>
+          {{{body}}}
+        </main>
+      </div>
+      <!-- Footer section -->
+      {{#if showFooter}}
+        <footer class="shared-footer">
+          <ul class="nav">
+            <li class="footer-item" id="footerItem">
+              <button type="button">
+                <a
+                  class="footer-link"
+                  href="https://github.com/Dimitrius504/jeopardyGameExpressHBS"
+                >
+                  <i class="bi bi-github">Github</i>
+                </a>
               </button>
             </li>
-            <li class="nav-item">
-              <button>
-                <a class="nav-link d-flex align-items-center" href="/gameInfo">Add Game Data</a>
+            <li class="footer-item">
+              <button type="button">
+                <a class="footer-link" href="/adminPanel">
+                  Admin?
+                </a>
               </button>
             </li>
           </ul>
-        </nav>
-        {{/if}}
-      </li>
-      <li>
-        <h1>{{title}}</h1>
-      </li>
-      <li>
-        <!-- User 2 or navigation links -->
-        {{#if user2}}
-        <h2 id="user2">{{user2}}</h2>
-        {{else}}
-        <nav class="shared-nav">
-          <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <button>
-                <a class="nav-link d-flex align-items-center" href="/gameOverview">Game Data</a>
-              </button>
-            </li>
-            <li class="nav-item">
-              <button>
-                <a class="nav-link d-flex align-items-center" href="/game">Live Game</a>
-              </button>
-            </li>
-          </ul>
-        </nav>
-        {{/if}}
-      </li>
-    </ul>
-  </header>
-  {{/if}}
-  <!-- Main content -->
-  <main>
-    {{{body}}}
-  </main>
-  <!-- Footer section -->
-  {{#if showFooter}}
-  <footer class="shared-footer">
-    <ul class="nav">
-      <li class="footer-item" id="footerItem">
-        <button type="button">
-          <a class="footer-link" href="https://github.com/Dimitrius504/jeopardyGameExpressHBS">
-            <i class="bi bi-github">Github</i>
-          </a>
-        </button>
-      </li>
-      <li class="footer-item">
-        <button type="button">
-          <a class="footer-link" href="/adminPanel">
-            Admin?
-          </a>
-        </button>
-      </li>
-    </ul>
-  </footer>
-  {{/if}}
-  </div>
-</body>
+        </footer>
+      {{/if}}
+    </div>
+  </body>
 
 </html>
