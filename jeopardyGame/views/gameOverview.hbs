@@ -1,0 +1,61 @@
+<!-- Game data page section -->
+<section id="game-data-page">
+  <!-- Table for displaying game information for each record in database -->
+  <table class="game-info" id="{{this.gamesList:_id}}">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Questions</th>
+        <th>Correct Answer</th>
+        <th>Incorrect Answer</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each gamesList}}
+        <tr>
+          <td>{{this.category}}</td>
+          <td>
+            <ul>
+              {{#each this.questions}}
+                <li>{{this.text}}</li>
+              {{/each}}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {{#each this.questions}}
+                <li>{{this.correct}}</li>
+              {{/each}}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {{#each this.questions}}
+                <li>{{this.incorrect}}</li>
+              {{/each}}
+            </ul>
+          </td>
+          <td>
+            <ul id="categoryId">
+              <!-- Edit button -->
+              <li>
+                <button>
+                  <a href="/gameEdit/{{this._id}}">
+                    Edit Data
+                  </a>
+                </button>
+              </li>
+              <!-- Delete button -->
+              <li>
+                <a href="/gameDelete/{{this._id}}" onclick="return confirm('Are you sure you wanna delete this?');">
+                  Delete Data
+                </a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>

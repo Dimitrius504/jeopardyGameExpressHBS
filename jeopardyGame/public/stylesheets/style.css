@@ -1,0 +1,604 @@
+@font-face {
+  font-family: gyparody;
+  src: url(/fonts/gyparody\ hv.ttf);
+}
+body {
+  overflow: hidden;
+  cursor: grab;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  margin: auto;
+}
+
+
+/* INDEX LANDING PAGE STYLES */
+
+#index {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(111, 88, 215, 1) 25%,
+    rgba(84, 131, 190, 1) 50%,
+    rgba(209, 76, 140, 1) 77%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#index h1 {
+  font-family: gyparody;
+  font-size: 17rem;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-direction: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+#index button {
+  font-family: gyparody;
+  position: absolute;
+  padding: 1%;
+  border: 1px solid black;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  bottom: 0;
+  color: rgba(0, 0, 0, 0.715);
+  width: 25%;
+  text-align: center;
+  animation-name: textAppear;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-direction: forwards;
+  animation-timing-function: ease-in-out;
+  background-color: rgba(250, 235, 215, 0.373);
+}
+
+#index button h2 {
+  font-size: 3rem;
+}
+
+#index button a {
+  text-decoration: none;
+  color: black;
+}
+
+#index button:hover {
+  color: black;
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+@keyframes example {
+  0% {
+    font-size: 1rem;
+    transform: skewX(262deg);
+  }
+  25% {
+    font-size: 2rem;
+  }
+  50% {
+    font-size: 12rem;
+  }
+  75% {
+    font-size: 18rem;
+  }
+  100% {
+    font-size: 17rem;
+  }
+}
+
+@keyframes textAppear {
+  0% {
+    display: none;
+  }
+  25% {
+    display: none;
+  }
+  50% {
+    display: none;
+  }
+  75% {
+    display: none;
+
+    bottom: -500%;
+  }
+  100% {
+    display: block;
+    bottom: 0;
+  }
+}
+
+
+/* Shared FOOTER STYLES */
+
+
+footer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: rgba(169, 15, 162, 0.545);
+  font-family: gyparody;
+  font-size: 2rem;
+}
+
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  width: 90%;
+  list-style-type: none;
+  align-items: center;
+  font-family: gyparody;
+  font-size: 2rem;
+}
+
+footer ul button {
+  font-family: gyparody;
+  font-size: 2rem;
+}
+
+main {
+  margin: 5px;
+}
+
+
+/* Game Page */
+
+@font-face {
+  font-family: gyparody;
+  src: url(gyparody\ hv.ttf);
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: grab;
+  font-family: gyparody;
+  background: rgb(63, 94, 251);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(176deg,
+          rgb(8, 2, 109) 0%,
+          rgb(171, 0, 131) 35%,
+          rgba(0, 212, 255, 1) 100%);
+  width: 100vw;
+  height: 100vh;
+}
+
+#game {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 2px 2px;
+  grid-auto-flow: column;
+  grid-template-areas:
+      "header header header"
+      "gametable gametable gametable"
+      "gametable gametable gametable"
+      "user1 . user2"
+}
+
+/* SHARED HEADER STYLES */
+
+.header {
+  grid-area: header;
+  background-color: rgba(0, 0, 0, 0.503);
+  width: 100vw;
+  height: 25vh;
+}
+
+.header ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header ul li {
+  list-style-type: none;
+  color: antiquewhite;
+  margin: 5px;
+  
+}
+
+.header ul li h1 {
+  font-size: 4rem;
+  
+}
+
+.header ul li h2 {
+  color: antiquewhite;
+  font-size: 1.5rem;
+}
+
+.header ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+header ul button {
+  font-family: gyparody;
+  font-size: 1.2rem;
+  background-color:rgba(240, 248, 255, 0);
+  color: white;
+}
+
+/* .gametable {
+  grid-area: gametable;
+width: 100vw;
+  background-color: black;
+  height: 75vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.gametable table {
+  width: 10%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+flex-wrap: wrap;
+flex-direction: column;  
+} */
+
+/* .gametable table th {
+  margin-top: 0;
+  font-size: 2rem;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  border: 2px solid white;
+}
+
+.gametable table td {
+  background-color: rgb(63, 1, 156);
+  font-size: 1.2rem;
+  color: rgba(255, 255, 0, 0.712);
+  border: 2px solid white;
+} */
+
+
+.gametable {
+  grid-area: gametable;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  text-align: center;
+  z-index: 999;
+}
+
+.category {
+  width: 16%; /* Adjust width as needed */
+  height: 100%;
+}
+
+.category table {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  top: 0;
+
+}
+
+.category h2 {
+  border: 2px solid black;
+  background-color: white;
+  font-size: 2.2rem;
+}
+
+.category table th,
+.category table td {
+  color: rgba(255, 255, 0, 0.712);
+  border: 2px solid white;
+  height: 100%;
+}
+
+.category table td {
+  background-color: rgb(63, 1, 156);
+  font-size: 1.2rem;
+}
+
+.category table th {
+  font-size: 2rem;
+  background-color: black;
+}
+
+.category table button {
+  font-size: 2rem;
+}
+
+.category table p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+#correct, #incorrect {
+  font-size: 1rem;
+}
+
+#userEarnings {
+  display: flex;
+  flex-direction: row;
+  width: 98vw;
+  justify-content: space-between;
+}
+
+.user1 {
+  grid-area: user1;
+  background-color: antiquewhite;
+  height: 25vh;
+  width: 25%;
+}
+
+.user2 {
+  grid-area: user2;
+  background-color: antiquewhite;
+  height: 25vh;
+  width: 25%;
+}
+
+.user1, .user2 {
+  text-align: center;
+}
+
+
+/* Player Info Form*/
+
+#adminRegisterForm, #adminLoginForm, #playerInfoForm {
+  background: rgb(63, 94, 251);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    176deg,
+    rgb(8, 2, 109) 0%,
+    rgb(171, 0, 131) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+#adminRegisterForm header, #adminLoginForm header, #playerInfoForm header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  padding: 2%;
+  text-align: center;
+}
+
+#adminRegisterForm header h1, #adminLoginForm header h1, #playerInfoForm header h1 {
+  top: 0;
+  font-family: gyparody;
+  font-size: 5rem;
+  color: black;
+}
+
+#admins-container, #login-container, #users-container, #gameInfoPage {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+  background-color: none;
+  text-align: center;
+  border: 1px solid black;
+  height: 50%;
+  bottom: 0;
+} 
+
+#adminInfo, #adminLoginInfo, #playerInfo, #gameInfo {
+  position: relative;
+  background-color: none;
+}
+
+#adminInfo fieldset, #adminLoginInfo fieldset, #playerInfo fieldset, #gameInfo fieldset {
+  margin: 20px;
+  font-size: 2rem;
+}
+
+#adminInfo input, #adminLoginInfo input, #playerInfo input, #gameInfo input {
+  background-color: grey;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#adminInfo button, #adminLoginInfo button, #playerInfo button, #gameInfo button {
+  font-size: 1.5rem;
+  font-family: gyparody;
+  background-color: rgba(137, 43, 226, 0.385);
+  border-radius: 15px;
+}
+
+/* Admin panel Styles */
+
+#adminPanel, #gameInfoPage {
+  background: rgb(63, 94, 251);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    176deg,
+    rgb(8, 2, 109) 0%,
+    rgb(171, 0, 131) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+    padding: 0;
+}
+
+#adminPanel .header, #gameInfoPage .header {
+  margin: 0;
+}
+
+#adminsListSection{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content:  center;
+  width: 100vw;
+
+}
+
+#adminList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content:space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+#anAdmin {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style-type: none;
+  text-align: center;
+  border: 2px solid black;
+  width: 40%;
+  margin: 5px;
+  height: 70%;
+  font-size: 1.3rem;
+  background-color: rgba(250, 235, 215, 0.61);
+}
+
+#anAdmin a {
+  color: rgb(195, 15, 15);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/* GAME DATA PAGE STYLES */
+
+#game-data-page {
+  width: 100vw;
+  height: 100vh;
+}
+
+#game-data-page header h1 {
+  font-size: 4rem;
+}
+
+.game-info {
+  margin-top: auto;
+  border: 2px solid black;
+  width: 100%;
+  text-align: center;
+}
+
+.game-info thead {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.618);
+  width: 100%;
+}
+
+.game-info tbody {
+ font-size: 1.2rem;
+ margin-bottom: 5px;
+ width: 100%;
+  background-color: rgba(0, 0, 0, 0.49);
+}
+
+.game-info tbody td {
+  border-left: 2px solid rgb(255, 255, 255);
+  border-top: 1px solid black;
+  color: rgb(231, 217, 217);
+}
+
+td#category {
+  font-size: 1.5rem;
+  color: white;
+  
+}
+.game-info tbody td li {
+  list-style-type: none;
+  border-bottom: 1px solid white;
+  
+}
+
+#categoryId {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+/* REGISTER GAME DATA PAGE STYLES */
+#questions {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.question {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  top: 0;
+  margin: 5px;
+  border: 2px solid white;
+  padding: 5%;
+  font-size: 1.2rem;
+}
+
+#gameInfo > button {
+  font-size: 4rem;
+  margin: 5%;
+  margin-bottom: auto;
+}
+
+#gameInfo > label {
+  font-size: 3rem;
+  color:wheat;
+  padding: 15%;
+  margin-top: 15px;
+}

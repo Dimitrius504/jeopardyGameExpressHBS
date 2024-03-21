@@ -1,0 +1,34 @@
+<!-- Game Info Page Section -->
+<section id="gameInfoPage">
+
+    <!-- Form for adding game information -->
+    <form action="/gameInfo" method="POST" id="gameInfo">
+        
+        <!-- Category input field -->
+        <label for="category">Category:</label><br />
+        <input type="text" id="category" name="category" required /><br /><br />
+
+        <!-- Questions section -->
+        <div id="questions">
+            <!-- Loop through questionCount to generate question fields -->
+            {{#each questionCount}}
+            <div class="question">
+                <!-- Question text input field -->
+                <label for="question{{this}}">Question {{this}}:</label><br />
+                <input type="text" id="question{{this}}" name="questions[{{this}}][text]" required /><br />
+                
+                <!-- Correct Answer input field -->
+                <label for="correctAnswer{{this}}">Correct Answer:</label><br />
+                <input type="text" id="correctAnswer{{this}}" name="questions[{{this}}][correct]" required /><br />
+                
+                <!-- Incorrect Answer input field -->
+                <label for="incorrectAnswer{{this}}">Incorrect Answer:</label><br />
+                <input type="text" id="incorrectAnswer{{this}}" name="questions[{{this}}][incorrect]" required /><br />
+            </div>
+            {{/each}}
+        </div>
+        
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+    </form>
+</section>

@@ -1,0 +1,47 @@
+<!-- Player information form section -->
+<section class="container" id="playerInfoForm">
+  <header>
+    <h1>Who's Playin'?</h1>
+  </header>
+  <aside class="users container" id="users-container">
+    <!-- Form for player information -->
+    <form method="post" action="/game" id="playerInfo">
+      <!-- Player 1 input field -->
+      <fieldset id="player1">
+        <label for="user1">User 1 Name: </label>
+        <input name="user1" id="user1" required />
+      </fieldset>
+      <!-- Player 2 input field -->
+      <fieldset id="player2">
+        <label for="user2">User 2 Name: </label>
+        <input name="user2" id="user2" required />
+      </fieldset>
+      <!-- Submit button -->
+      <button type="submit" value="submit" id="submit">
+        <h2>Lets Play!</h2>
+      </button>
+    </form>
+  </aside>
+
+  <!-- Admin check conditional rendering -->
+  {{#if adminCheck}}
+    <ul>
+      <li><h1>{{title}}</h1></li>
+    </ul>
+  {{else}}
+    <ul>
+      <li><h1>{{username}}</h1></li>
+    </ul>
+  {{/if}}
+
+  <!-- Admin check conditional rendering (repeated) -->
+  {{#if adminCheck}}
+    <ul>
+      <li><h1>{{title}}</h1></li>
+    </ul>
+  {{else}}
+    <ul>
+      <li><h1>{{username}}</h1></li>
+    </ul>
+  {{/if}}
+</section>

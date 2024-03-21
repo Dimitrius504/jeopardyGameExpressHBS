@@ -1,0 +1,34 @@
+<!-- Game Edit Page Section -->
+<section id="editGamePage">
+  
+  <!-- Form for editing game information -->
+  <form action="/gameEdit/{{gameRecord._id}}" method="POST" id="editGameForm">
+    
+    <!-- Category input field -->
+    <label for="category">Category:</label><br />
+    <input type="text" id="category" name="category" value="{{gameRecord.category}}" required /><br /><br />
+    
+    <!-- Questions section -->
+    <div id="questions">
+      <!-- Loop through gameRecord questions to populate edit fields -->
+      {{#each gameRecord.questions}}
+      <div class="question">
+        <!-- Question text input field -->
+        <label for="question{{@index}}">Question {{@index}}:</label><br />
+        <input type="text" id="question{{@index}}" name="questions[{{@index}}][text]" value="{{this.text}}" required /><br />
+        
+        <!-- Correct Answer input field -->
+        <label for="correctAnswer{{@index}}">Correct Answer:</label><br />
+        <input type="text" id="correctAnswer{{@index}}" name="questions[{{@index}}][correct]" value="{{this.correct}}" required /><br />
+        
+        <!-- Incorrect Answer input field -->
+        <label for="incorrectAnswer{{@index}}">Incorrect Answer:</label><br />
+        <input type="text" id="incorrectAnswer{{@index}}" name="questions[{{@index}}][incorrect]" value="{{this.incorrect}}" required /><br />
+      </div>
+      {{/each}}
+    </div>
+    
+    <!-- Submit button -->
+    <button type="submit">Submit</button>
+  </form>
+</section>
