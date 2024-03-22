@@ -1,35 +1,35 @@
 <!-- Game Section -->
 <div id="game">
-  
+
   <!-- Game header -->
   <header class="header">
     <ul>
       <!-- Check if user1 is defined -->
       {{#if user1}}
-      <li>
-        <h2 id="user1">{{user1}}</h2>
-      </li>
-      <!-- If user1 is not defined, display default -->
+        <li>
+          <h2 id="user1">{{user1}}</h2>
+        </li>
+        <!-- If user1 is not defined, display default -->
       {{else}}
-      <li>
-        <h2 id="user1">User 1</h2>
-      </li>
+        <li>
+          <h2 id="user1">User 1</h2>
+        </li>
       {{/if}}
-      
+
       <li>
         <h1>JEOPARDY</h1>
       </li>
-      
+
       <!-- Check if user2 is defined -->
       {{#if user2}}
-      <li>
-        <h2 id="user2">{{user2}}</h2>
-      </li>
-      <!-- If user2 is not defined, display default -->
+        <li>
+          <h2 id="user2">{{user2}}</h2>
+        </li>
+        <!-- If user2 is not defined, display default -->
       {{else}}
-      <li>
-        <h2 id="user2">User 2</h2>
-      </li>
+        <li>
+          <h2 id="user2">User 2</h2>
+        </li>
       {{/if}}
     </ul>
   </header>
@@ -38,39 +38,42 @@
   <div class="gametable">
     <!-- Loop through gamesList to display categories and questions -->
     {{#each gamesList}}
-    <div class="category">
-      <h2>{{this.category}}</h2>
-      <div class="questions">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Loop through questions within each category -->
-            {{#each this.questions}}
-            <tr>
-              <td>
-                <!-- Button to select a question -->
-                <button onclick="getQuestion(this, '{{this.text}}', '{{this.correct}}', '{{this.incorrect}}')">{{this.value}}</button>
-              </td>
-            </tr>
-            {{/each}}
-          </tbody>
-        </table>
+      <div class="category">
+        <h2>{{this.category}}</h2>
+        <div class="questions">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Loop through questions within each category -->
+              {{#each this.questions}}
+                <tr>
+                  <td>
+                    <!-- Button to select a question -->
+                    <button
+                      onclick="getQuestion(this, '{{this.text}}', '{{this.correct}}', '{{this.incorrect}}', '{{this.value}}')"
+                    >{{this.value}}</button>
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
     {{/each}}
   </div>
 
   <!-- User earnings section -->
   <section id="userEarnings">
     <div class="user1">
-      <h1>Earnings:</h1>
+      <h1>Earnings: <span id="user1Earnings">0</span></h1>
     </div>
     <div class="user2">
-      <h1>Earnings:</h1>
+      <h1>Earnings: <span id="user2Earnings">0</span></h1>
     </div>
   </section>
+
 </div>

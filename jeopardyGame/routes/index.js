@@ -70,6 +70,7 @@ router.get("/gameInfo", adminCheck, async (req, res) => {
 // POST users to Game page
 router.post("/game", async (req, res) => {
   // Process form data and render the game page
+
   let { user1, user2 } = req.body;
   const gamesList = await GameModel.find().limit(6);
   gamesList.forEach((game) => {
@@ -83,6 +84,7 @@ router.post("/game", async (req, res) => {
     user1,
     user2,
     showFooter: true,
+
   });
 });
 
@@ -138,6 +140,7 @@ router.post("/adminRegister", (req, res) => {
     }
   );
 });
+
 
 // GET admin login page
 router.get("/adminLogin", async (req, res) => {
