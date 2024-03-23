@@ -19,7 +19,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd jeopardyGame && npm run start",
+    "start": "cd jeopardyGame && npm i && npm run start",
     "client": "npm start --prefix jeopardyGame",
     "dev": "concurrently \"npm start\" \"npm run jeopardyGame\""
   },  
