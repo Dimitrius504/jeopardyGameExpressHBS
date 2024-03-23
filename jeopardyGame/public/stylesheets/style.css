@@ -155,9 +155,9 @@ footer {
 footer ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 100%;
-  width: 99%;
+  width: 100%;
   list-style-type: none;
   align-items: center;
   font-family: gyparody;
@@ -464,9 +464,9 @@ header ul button {
 #adminsListSection{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content:  center;
-  width: 100vw;
+  width: 99vw;
   height: 80%;
 }
 
@@ -475,20 +475,22 @@ header ul button {
   flex-wrap: wrap;
   flex-direction:row;
   justify-content:space-evenly;
-  align-items: center;
+  align-items:normal;
   width: 100%;
 }
 
 #anAdmin {
+  border-radius: 15px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   list-style-type: none;
   text-align: center;
   border: 2px solid black;
-  width: 40%;
-  margin: 5px;
+  width: 50%;
+  margin: 2px;
+  padding: 5%;
   font-size: 1.3rem;
   background-color: rgba(250, 235, 215, 0.61);
 }

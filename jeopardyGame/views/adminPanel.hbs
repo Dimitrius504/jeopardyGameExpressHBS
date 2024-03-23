@@ -8,8 +8,11 @@
         <li id="anAdmin">
           <!-- Display admin username -->
           <h2>{{this.username}}</h2>
-            <!-- If user is not admin, provide login link -->
+          <!-- If user is not admin, provide login link -->
+          <aside class="container d-flex justify-content-evenly">
             <a href="/adminLogin?userId={{this._id}}">Login</a>
+            <a href="/adminRegister">Register</a>
+          </aside>
         </li>
       {{/each}}
     </ul>
