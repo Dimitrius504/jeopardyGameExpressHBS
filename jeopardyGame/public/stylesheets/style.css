@@ -258,40 +258,7 @@ header ul button {
   color: white;
 }
 
-/* .gametable {
-  grid-area: gametable;
-width: 100vw;
-  background-color: black;
-  height: 75vh;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-.gametable table {
-  width: 10%;
-  height: 100%;
-  text-align: center;
-  display: flex;
-flex-wrap: wrap;
-flex-direction: column;  
-} */
-
-/* .gametable table th {
-  margin-top: 0;
-  font-size: 2rem;
-  background-color: black;
-  color: rgb(255, 255, 255);
-  border: 2px solid white;
-}
-
-.gametable table td {
-  background-color: rgb(63, 1, 156);
-  font-size: 1.2rem;
-  color: rgba(255, 255, 0, 0.712);
-  border: 2px solid white;
-} */
-
+/* Game page table styles */
 
 .gametable {
   grid-area: gametable;
@@ -416,8 +383,8 @@ flex-direction: column;
   color: black;
 }
 
-#admins-container, #login-container, #users-container, #gameInfoPage {
-  margin-top: 10%;
+#admins-container, #login-container, #users-container, #gameInfoPage, #editGamePage {
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -430,23 +397,23 @@ flex-direction: column;
   bottom: 0;
 } 
 
-#adminInfo, #adminLoginInfo, #playerInfo, #gameInfo {
+#adminInfo, #adminLoginInfo, #playerInfo, #gameInfo, #editGameForm {
   position: relative;
   background-color: none;
 }
 
-#adminInfo fieldset, #adminLoginInfo fieldset, #playerInfo fieldset, #gameInfo fieldset {
+#adminInfo fieldset, #adminLoginInfo fieldset, #playerInfo fieldset, #gameInfo fieldset, #editGameForm fieldset {
   margin: 20px;
   font-size: 2rem;
 }
 
-#adminInfo input, #adminLoginInfo input, #playerInfo input, #gameInfo input {
+#adminInfo input, #adminLoginInfo input, #playerInfo input, #gameInfo input, #editGameForm input {
   background-color: grey;
   color: white;
   font-size: 1.5rem;
 }
 
-#adminInfo button, #adminLoginInfo button, #playerInfo button, #gameInfo button {
+#adminInfo button, #adminLoginInfo button, #playerInfo button, #gameInfo button, #editGameForm button {
   font-size: 1.5rem;
   font-family: gyparody;
   background-color: rgba(137, 43, 226, 0.385);
@@ -472,7 +439,7 @@ flex-direction: column;
     padding: 0;
 }
 
-#gameInfoPage {
+#gameInfoPage, #editGamePage {
   background: rgb(63, 94, 251);
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -489,7 +456,8 @@ flex-direction: column;
     padding: 0;
 }
 
-#adminPanel .header, #gameInfoPage .header {
+
+#adminPanel .header, #gameInfoPage .header, #editGamePage .header {
   margin: 0;
 }
 
@@ -622,23 +590,23 @@ td#category {
   font-size: 1.2rem;
 }
 
-#gameInfo {
+#gameInfo, #editGameForm {
   background-color: rgba(0, 0, 0, 0.603);
   color: white;
 height: 100%;
 }
 
-#gameInfo > button {
+#gameInfo > button, #editGameForm > button {
   font-size: 4rem;
 }
 
 
-#gameInfo > #questions {
+#gameInfo > #questions, #editGameForm #questions {
   background-color: rgba(0, 0, 0, 0.859);
 }
 
 
-#gameInfo > label {
+#gameInfo > label, #editGameForm label {
   font-size: 3rem;
   color:wheat;
   padding: 5%;

@@ -171,6 +171,7 @@ router.get("/gameEdit/:_id", adminCheck, async (req, res) => {
     title: "Edit Game",
     gameRecord: gameRecord,
     user: req.user,
+    showHeader: true,
   });
 });
 
