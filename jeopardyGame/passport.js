@@ -7,7 +7,7 @@ require('dotenv').config();
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID, // Google OAuth client ID
     clientSecret: process.env.GOOGLE_CLIENT_SECRET, // Google OAuth client secret
-    callbackURL: 'http://localhost:3000/auth/google/callback' // Callback URL for Google OAuth
+    callbackURL: 'https://jeopardygameexpresshbs-2.onrender.com/auth/google/callback' // Callback URL for Google OAuth
   },
   async (accessToken, refreshToken, profile, done) => { // Callback function for handling Google OAuth response
     try {
